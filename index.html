@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Website Attariq</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/image/logo.png" type="logo">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html"><img src="assets/image/logo.png" alt="logo navbar"></a>
+            <ul>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#pendidikan">School</a></li>
+                <li><a href="#hobby">Hobby</a></li>
+                <li><a href="#about_me">About me</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+        <div id="content">
+            <article id="profile" class="card">
+                <h1>Profile</h1>
+                <ul>
+                    <li>Name : Attariq Fadly Yudi Saputra </li>
+                    <li>Address : Perum Bagongan Asri Blok D 54 RT 03/RW 11, Magelang Regency, Jawa Tengah</li>
+                    <li>Place and Date of Birth : Magelang, 23 May 2001</li>
+                    
+                </ul>
+            </article>
+                
+            <article id="pendidikan" class="card">
+                <h1>School</h1>
+                <ul>
+                    <li>SD Negeri Sukorejo 2</li>
+                    <li>SMP Negeri 8 Magelang</li>
+                    <li>SMA Negeri 3 Magelang</li>
+                    <li>Universitas Negeri Semarang (Currently)</li>
+                </ul>
+                
+            </article>
+            <article id="hobby" class="card">
+                <h1>Hobby</h1>
+                <figure id="music">
+                    <img src="assets/image/music.png" alt="Music Album">
+                    <figcaption>Listening to Music <br>(My Favorit Band & Artist)</figcaption>
+                    
+                </figure>
+                <figure id="film">
+                    <img src="assets/image/film.png" alt="Favorite Film">
+                    <figcaption>Watching Films <br>(My Favorite Film)</figcaption>
+                </figure>
+                <figure>
+                    <img src="" alt="">
+                    <figcaption></figcaption>
+                </figure>
+
+            </article>
+        </div>
+
+        <aside class="card">
+            <article class="profile_card">
+                <h1>Photo</h1>
+                <figure id="pasfoto">
+                    <img src="assets/image/Pas Foto_Attariq Fadly Yudi Saputra.jpeg" alt="Gambar">
+                    <figcaption>Formal</figcaption>
+                </figure>
+
+                <figure id="paskib">
+                    <img src="assets/image/paskib.jpg" alt="Gambar">
+                    <figcaption>When I was in high school, I served as a flag raiser</figcaption>
+                </figure>
+                <figure id="casual">
+                    <img src="assets/image/casual.jpeg" alt="Gambar">
+                    <figcaption>On the Beach</figcaption>
+                </figure>
+                <figure id="mamah">
+                    <img src="assets/image/fotomama.jpg" alt="Gambar">
+                    <figcaption>My Mom!</figcaption>
+                </figure>
+                
+            </article>
+        </aside>
+
+        
+    </main>
+
+    <footer>
+        <div id="about_me" class="social-media">
+            <a href="https://www.instagram.com/ariqfadli/"><img src="assets/image/ig.png" alt="Instagram"></a>
+            <a href="https://id.linkedin.com/in/attariq-fadly-yudi-saputra-a34ab8278"><img src="assets/image/linkedin.png" alt="LinkedIn"></a>
+        </div>
+        <div id="intro">
+            <p>Hello, and welcome to my website! My name is Attariq Fadly Yudi Saputra, and I'm thrilled that you stopped by. This is where I share about myself, my profile, photos of me, so you could know about me!</p>
+            <br>
+            <p>Thank you for being here, and I hope you find something that resonates with you.</p>
+        </div>
+        <div class="quotes">
+            <p>"Never look back at your past"</p>
+            <p>-Me</p>
+        </div>
+    </footer>
+
+    <script>
+        function smoothScroll(target, duration) {
+          var targetElement = document.querySelector(target);
+          var targetPosition = targetElement.getBoundingClientRect().top;
+          var startPosition = window.pageYOffset;
+          var startTime = null;
+      
+          function animation(currentTime) {
+            if (startTime === null) startTime = currentTime;
+            var timeElapsed = currentTime - startTime;
+            var run = ease(timeElapsed, startPosition, targetPosition, duration);
+            window.scrollTo(0, run);
+            if (timeElapsed < duration) requestAnimationFrame(animation);
+          }
+      
+          function ease(t, b, c, d) {
+            t /= d / 2;
+            if (t < 1) return (c / 2) * t * t + b;
+            t--;
+            return (-c / 2) * (t * (t - 2) - 1) + b;
+          }
+      
+          requestAnimationFrame(animation);
+        }
+      
+        var links = document.querySelectorAll('a[href^="#"]');
+        links.forEach(function (link) {
+          link.addEventListener('click', function (e) {
+            e.preventDefault();
+            var targetId = this.getAttribute('href');
+            smoothScroll(targetId, 1500); 
+          });
+        });
+      </script>
+      
+</body>
+</html>
